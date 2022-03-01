@@ -1,0 +1,21 @@
+{
+  "name": "my-help-cli",
+  "version": "1.0.0",
+  "description": "Helper cli for myself",
+  "main": "index.js",
+  "bin": {
+    "my-helper": "index.js"
+  },
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cli"
+  ],
+  "author": "Dmitry Kuharev",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.26.0"
+  }
+}
