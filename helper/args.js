@@ -1,5 +1,3 @@
-
-
 const getArgs = (args) => {
     const result = {};
     const [executer, file, ...rest] = args
