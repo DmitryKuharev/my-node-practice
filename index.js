@@ -18,9 +18,23 @@ const saveToken = async (token) => {
     
 }
 
+const getForecast = async() => {
+    try {
+        const weather = await getWeather('Mogilev');
+        console.log(weather);
+    } catch (error) {
+        if (error?.response?.status == 404) {
+            printError('Town is wrong');
+        }else if (error?.response?.status == 401) {
+            printError('Token is wrong');
+        }else{
+            printError(error.message);
+        }
+    }
+}
+
 const start = () => {
     const args = getArgs(process.argv)
-    //console.log(args);
     if (args.h){
         printHelp();
         // Help block
@@ -32,7 +46,7 @@ const start = () => {
         // Secondary block
         return saveToken(args.t)
     }
-    getWeather('Mogilev');
+    getForecast();
 }
 
 start();
